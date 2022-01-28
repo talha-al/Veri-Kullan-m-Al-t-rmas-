@@ -1,0 +1,61 @@
+.header {
+  font: Bold 55px "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin-bottom: 16px;
+  text-align: center;
+  align-self: center;
+  border-bottom: 1px solid;
+  padding: 24px;
+  width: 60%;
+}
+
+.post {
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.date {
+  text-align: right;
+  padding-right: 10px;
+  // width: 230px;
+  white-space: nowrap;
+  font: normal 34px Helvetica, sans-serif;
+  letter-spacing: -2px;
+  color: #ccc;
+  text-transform: uppercase;
+  line-height: 35px;
+}
+
+.dateBrick {
+  float: right;
+  height: 30px;
+  width: 45px;
+  margin-right: 12px;
+  background-color: #6498cc;
+  color: #bbd5f1;
+  font: Bold 12px Verdana, Sans-Serif;
+  text-align: center;
+  line-height: 12px;
+  margin-left: 10px;
+  padding-top: 5px;
+  letter-spacing: 0px;
+  overflow: hidden;
+}
+
+.quoteText {
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -1px;
+  text-align: start;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #888;
+  border-left: solid 5px #6498cc;
+  padding-left: 10px;
+}
+
+.linkHeader {
+  font: Bold 20px Helvetica, Arial, sans-serif;
+  letter-spacing: -1px;
+  color: #c00;
+  float: left;
+}

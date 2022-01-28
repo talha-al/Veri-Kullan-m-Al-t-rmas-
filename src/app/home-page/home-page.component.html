@@ -1,0 +1,80 @@
+<div fxLayout="column">
+  <!--Header-->
+  <h1 fxLayout="column">
+    <div fxLayoutAlign="end end" fxLayoutGap="14px" style="padding-right: 16px;">
+      <button mat-stroked-button (click)="goToTumblrLink()"
+        style="width: 12%;color: white; background-color: #b7c0b5; font-weight: 500;">Demo kullanıcısını takip
+        et</button>
+      <button mat-stroked-button (click)="goToTumblrLink()"
+        style="width: 5%;color: white;font-size: large; background-color: black;">tumblr</button>
+    </div>
+    <a fxFlex="1 1 auto" class="header">
+      {{model.tumblelog.title }}
+    </a>
+  </h1>
+
+
+  <div *ngFor="let post of model.posts;index as index" fxFlex="50%" fxLayout="column"
+    fxLayoutAlign="space-between center">
+
+    <!--Type=='quote'-->
+    <div *ngIf="post.type=='quote'" class="post" fxLayout="column" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxFlex="20%" style="width: 59%;">
+        <div fxLayout="row">
+          <div class="date">Wed</div>
+          <div class="dateBrick">Nov</div>
+        </div>
+        <span class="quoteText" fxFlex="76%">
+          {{ post.quoteText }}
+        </span>
+      </div>
+      <div fxLayout="row">
+        —
+        <span style="font-weight: 500;" [innerHTML]="post.quoteSource"> </span>
+      </div>
+
+    </div>
+
+
+    <!--Type=='photo'-->
+    <div *ngIf="post.type=='photo'" class="post" fxLayout="column">
+      <div style="margin-top: 30px;">
+        <img [src]="post.photoUrl400">
+      </div>
+      <span [innerHTML]="post.photoCaption"></span>
+    </div>
+
+    <!--Type=='link'-->
+    <div *ngIf="post.type=='link'" fxLayout="column" fxLayoutAlign="space-between center">
+      <div class="post" fxLayout="column" style="width: 39%;">
+        <span class="linkHeader">
+          {{ post.linkText }}
+        </span>
+        <span [innerHTML]="post.linkDescription"> </span>
+      </div>
+    </div>
+
+    <!--Type=='"conversation"'-->
+    <div *ngIf="post.type=='conversation'" fxLayout="column" fxLayoutAlign="space-between center">
+      <div class="post" fxLayout="column">
+        <span style="border:1px solid;background-color: rgb(223, 223, 223);padding:4px;"
+          [innerText]="post.conversationText"></span>
+      </div>
+    </div>
+
+    <!--Type=='"regular"'-->
+    <div *ngIf="post.type=='regular'" fxLayout="column" fxLayoutAlign="space-between center">
+      <div class="post" fxLayout="column" style="width: 30%;font-size: 13px;">
+        <span [innerHTML]="post.regularBody"></span>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+</div>
