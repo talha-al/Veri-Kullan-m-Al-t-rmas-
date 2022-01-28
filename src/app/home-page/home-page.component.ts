@@ -26,6 +26,13 @@ export class HomePageComponent implements OnInit {
     window.open("https://www.tumblr.com/reblog/demo/459009076/uHt0TEhP");
   }
 
+  getDate(date: string) {
+    return new Date(date).getDate();
+  }
+  getMonth(date: string) {
+    return new Date(date).getMonth();
+  }
+
 
 }
 
@@ -41,7 +48,8 @@ export interface Posts {
   bookmarklet: number,
   bodateokmark: Date,
   conversationText: string;
-  dategmt: Date,
+  date: string;
+  dategmt: string,
   feeditem: string,
   format: string,
   fromfeedid: string,

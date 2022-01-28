@@ -8,9 +8,9 @@
       <button mat-stroked-button (click)="goToTumblrLink()"
         style="width: 5%;color: white;font-size: large; background-color: black;">tumblr</button>
     </div>
-    <a fxFlex="1 1 auto" class="header">
+    <span fxFlex="1 1 auto" class="header">
       {{model.tumblelog.title }}
-    </a>
+    </span>
   </h1>
 
 
@@ -21,8 +21,8 @@
     <div *ngIf="post.type=='quote'" class="post" fxLayout="column" fxLayoutAlign="space-between center">
       <div fxLayout="row" fxFlex="20%" style="width: 59%;">
         <div fxLayout="row">
-          <div class="date">Wed</div>
-          <div class="dateBrick">Nov</div>
+          <div class="date">{{ getDate(post.date) }} </div>
+          <div class="dateBrick">{{ getMonth(post.date) }}</div>
         </div>
         <span class="quoteText" fxFlex="76%">
           {{ post.quoteText }}
